@@ -1,55 +1,214 @@
-# LibreIncu-150
+# Manual de Montaje - Incubadora Libreincu 150 v1
 
-Manual de fabricacion, montaje y puesta en marcha de la incubadora LibreIncu-150.
+### 1. Introducción
 
-LibreIncu es una incubadora de huevos pensada como tecnologia abierta para la Agricultura Familiar, Campesina e Indigena. El objetivo es que una comunidad, taller o fabrica local pueda construir, reparar y adaptar la maquina sin depender de una caja cerrada.
 
-Esta version documenta la version mecanica de LibreIncu-150: gabinete, bandejas, mecanismo de rotación, actuadores, instalacion electrica, placa Olivia v0.2 y puesta en marcha.
+Este manual describe el proceso de montaje de la incubadora Libreincu 150 v1, un sistema automatizado para incubación de huevos con control preciso de temperatura, humedad y rotación.
 
-[Descargar manual PDF](manual_libreincu_150.pdf){ .md-button .md-button--primary }
-[Ver inventario CAD](inventario.md){ .md-button }
-[Ver modelo 3D](vista-3d.md){ .md-button }
+![image](img/manual/SJ7zuawhfl.png)
 
-![Conjunto LibreIncu-150](img/piezas/_conjunto.png){ width=680 }
 
-## Que se puede hacer con este manual
+#### Dimensiones
+| Parámetro | Medida |
+| -------- | -------- |
+| Ancho interno     | 470 mm     |
+|Profundidad interna|	500 mm|
+|Alto interno|	970 mm|
+|Bandejas	|400 × 400 mm|
+|Separación vertical entre ejes	|120 mm|
+|Separación entre bandeja pivotante y pared	|30 mm|
+|Separación entre eje superior e inferior|	240 mm|
+|Altura del deflector desde la base	|300 mm|
+|Distancia del deflector al fondo|	70 mm|
+|Inclinación principal	|20° hacia abajo|
+|Planos del deflector|	115, 60 y 50 mm|
+|Pliegues del deflector	|60° y 30°|
 
-- Comprar piezas comerciales, perfiles, placas, chapas, actuadores y fijaciones.
-- Cortar y preparar las piezas necesarias.
-- Montar los subconjuntos mecanicos principales con apoyo visual.
-- Cablear la instalacion electrica con controles de seguridad.
-- Poner en marcha la incubadora y diagnosticar fallas frecuentes.
 
-!!! warning "Advertencia"
-    Las medidas mecanicas sirven para compra, corte y control general. 
-    Agujeros, plegados, angulos, tolerancias, alojamientos y posiciones finas se resuelven abriendo el CAD maestro cuando el manual indica `VER CAD`.
 
-## Como leer este manual
+---
+### 2. Componentes del Sistema
 
-1. **Antes de fabricar**: alcance, herramientas, criterios de seguridad y convenciones.
-2. **Compra y corte**: listas resumidas para preparar materiales sin leer el inventario completo.
-3. **Montaje mecanico**: una seccion por componente, con locator, vista del subconjunto, mini-BOM y controles.
-4. **Instalacion electrica**: potencia, placa Olivia, GPIO y seguridad de 220 VAC.
-5. **Puesta en marcha**: checklist de prueba sin huevos y validacion por etapas.
-6. **Troubleshooting**: diagnostico guiado por sintoma.
-7. **Inventario CAD**: referencia tecnica completa.
+#### 2.1 Sistema de Control Electrónico
+![photo_5062176746198732026_y](img/manual/H1BZzM_jzx.jpg)
 
-## De un vistazo
+| Componente | Descripción |
+|------------|-------------|
+| **Protecciones** | Disyuntor diferencial e interruptores termomagnéticos |
+| **Alimentación** | Fuente (220Vac-12Vcc) + Step-Down (12Vcc - 5Vcc) |
+| **Placa Olivia control** | * ESP32, Control central con WiFi  *   Salida Triac-> Control de resistencia 200W a 220V AC *  Comunicación I2C con Sensor Temp + Hum BME280 * Entradas Digitales-> Sensores de posición bandejas) * Salidas Digitales a puente H y relés|
+| **Módulo Puente H** | Control motor de rotación |
+| **Módulo relés** |  Control bomba del humidificador |
 
-| Sistema | Resumen |
-|---|---|
-| Estructura | Bastidor de plegado L 25x25, 30x30 y una pieza 40x40 mm. |
-| Cerramiento | Chapas metalicas, MDF 18 mm y frente de policarbonato. |
-| Temperatura | Resistencia calefactora 200 W, ventilacion y lectura BME280. |
-| Humidificacion | Bomba 12 V y circuito de agua controlado por la placa. |
-| Rotacion | Mecanismo de rotación de bandejas con ejes, acoples, rodamientos, polea y cremallera. |
-| Control | Placa Olivia v0.2 con ESP32-WROOM-32D. |
-| Conectividad | WiFi para operacion local y monitoreo del sistema. |
+![PCB Olivia](img/manual/H1iLalviGl.png)
 
-## Dimensiones de referencia
+#### 2.2 Sistema Mecánico de Rotación
 
-- **Envolvente cuerpo:** 604.8 x 1233.5 x 1170.4 mm.
-- **Envolvente total CAD:** 604.8 x 1263.9 x 1189.2 mm.
-- **Unidades:** milimetros.
+| Componente | Descripción |
+|------------|-------------|
+| **Soportes 8mm** |kl08 (bandejas) y kp08 (tornillo) |
+| **Transmisión** | soportes + Motor + acople 8mm + tornillo Thsl |
+| **Carro de Elevación** | 2 tuercas Thsl. Sube y baja sobre el tornillo |
+| **Cuna para Bandejas** | estante pivotante para bandejas 40x40cm |
+| **Sensores Reed** | 2 sensores magnéticos (posición arriba/abajo) |
+| **Finales de Carrera** | 2 finales (protección mecánica) |
+| **Seguidor y Perno de Bandejas** | Oscila en la ranura horizontal del carro |
 
-La envolvente total incluye elementos en posicion abierta o de referencia. Para fabricar o ubicar piezas, seguir siempre las notas de cada componente y el CAD.
+#### 2.3 Sistema de Humidificación
+
+| Componente | Descripción |
+|------------|-------------|
+| **Electroválvula** | Control de suministro de agua |
+| **Bomba de Agua** | Impulsión de agua al aspersor |
+| **Manguera y Conector** | manguera 10mm + adaptador 10-6mm |
+| **Aspersor** | pico 6mm |
+| **Soporte Aspersor** | Ángulo L empotrado |
+
+---
+
+
+## 3. Preparación del Montaje
+
+### 3.1 Materiales Necesarios
+
+- [ ] Mueble terminado
+- [ ] Tablero eléctrico
+- [ ] Elementos del Sistema mecánico de rotación
+- [ ] Sensores Reed y finales de carrera
+- [ ] Elementos del Sistema de humidificación
+- [ ] Herramientas de montaje
+- [ ] Tornillos y accesorios
+
+### 3.2 Verificación de Seguridad
+
+- Verificar que no haya tensión eléctrica en el sistema
+- Confirmar que todos los componentes estén presentes
+- Revisar elementos de protección personal
+- Asegurar espacio y ventilación adecuado
+
+---
+
+## 4. Montaje del Sistema de Control
+
+### 4.1 Instalación de la Placa ESP32
+
+ **Ubicación de la placa**
+   - Montar la placa Olivia Control en el gabinete previamente acoplado al tablero eléctrico de la incubadora, observando la ubicación de ranuras y orificios para cableado.
+
+### 4.2 **Conexión al sensor BME280**
+   **(J11 - I2C)**
+    <div style="display:flex; justify-content:center;
+            align-items:flex-start; gap:12px; flex-wrap:wrap;">
+  <img src="img/manual/HJR0Tlvofe.png"
+       alt="Imagen 1"
+       style="width:30%; height:auto;">
+  <img src="img/manual/ByKbWcUnzg.png"
+       alt="Imagen 2"
+       style="width:30%; height:auto;">
+</div>
+
+### 4.3 **Conexión al relé Humidificador**
+La alimentación de los relés del módulo (JVcc) deberá conectarse a la salida del step down en 5Vcc. Gnd In1/2 Vcc se conectan a J6 de la placa principal.
+Lso contactos NO (normal abierto) del relé se conectan como interruptor en uno de los cables de alimentación de la bomba de agua
+   **(J6 - Led)**
+
+   <div style="display:flex; justify-content:center;
+            align-items:flex-start; gap:12px; flex-wrap:wrap;">
+  <img src="img/manual/SJV-AlPoMg.png"
+       alt="Imagen 1"
+       style="width:30%; height:auto;">
+  <img src="img/manual/rySlMcI2zx.png"
+       alt="Imagen 2"
+       style="width:30%; height:auto;">
+    <img src="img/manual/SJXmPq8nMg.png"
+       alt="Imagen 3"
+       style="width:19%; height:auto;">
+</div>
+![image](img/manual/SJXmPq8nMg.png)
+
+
+
+### 4.4 **Conexión al Puente H Rotación**
+Remover el jumper que normalmente puentea "EnA" en el módulo
+   **(J9 - Motor A)**
+     <div style="display:flex; justify-content:center;
+            align-items:flex-start; gap:12px; flex-wrap:wrap;">
+  <img src="img/manual/Sy04CePjGx.png"
+       alt="Imagen 1"
+       style="width:25%; height:auto;">
+  <img src="img/manual/rk0dCqIhMe.png"
+       alt="Imagen 2"
+       style="width:50%; height:auto;">
+  </div>
+
+
+
+ **Interrumpir las conexiones a IN1,IN2 con Finales de Carrera arriba y abajo**
+
+### 4.5 Conexiones de Sensores Reed
+   **Input4**
+```
+   GPIO 35 → Reed sensor A (posición arriba)
+```
+   **Input3**
+```
+   GPIO 34 → Reed sensor B (posición abajo)
+```
+![image](img/manual/HyENBZDsGg.png)
+
+### 4.6 Conexiones de Finales de Carrera
+
+```
+  Final de carrera A → interrumpe el cable que conecta la salida MotorA de la placa Olivia (GPIO 2) y la entrada IN1 del módulo puente H
+  Final de carrera B → interrumpe el cable que conecta la salida MotorA de la placa Olivia (GPIO 15) y la entrada IN2 del módulo puente H
+
+```
+
+---
+
+## 5. Montaje del Sistema Mecánico
+![Soporte KP08 (1)](img/manual/SybnmZwoGg.png)
+
+### 5.1 Ensamblaje del Tornillo de Rotación
+
+1. **Montar el carro de elevación**
+   - Insertar y ajustar las 2 tuercas en el carro
+   - Enhebrar el carro sobre el tornillo
+   - Ajustar altura inicial, de la mitad hacia abajo
+
+2. **Montar soporte motor y soportes KP08**
+   - Anclar un soporte Kp08 al mueble y ajustar el tornillo thsl mediante los prisioneros de dicho soporte utilizando llave allen de 1,5mm. Observar que sobresalga hacia arriba aprox 12mm. Luego colocar y anclar el otro soporte KP08 al mueble
+   - Ajustar acople 8mm al motor y al tornillo
+   - Colocar el soporte de motor revisando que las distancias entre acoples no superen 1mm ni queden apretadas.
+
+  <div style="display:flex; justify-content:center;
+            align-items:flex-start; gap:12px; flex-wrap:wrap;">
+  <img src="img/manual/rkNGtAw3Gg.png"
+       alt="Imagen 1"
+       style="width:40%; height:auto;">
+  <img src="img/manual/HJdHFCvhfe.png"
+       alt="Imagen 2"
+       style="width:40%; height:auto;">
+  </div>
+
+
+
+## Deflector
+1. Cortar chapa de 0,5 mm. El modelo representa 240 x 470 mm de ancho y aletas laterales de 15 mm para fijar a cada lado.
+2. Considerar un largo total de 225 mm: paños de 115, 60 y 50 mm.
+3. Marcar los pliegues a 115 mm y 175 mm desde un extremo.
+4. Cortar las aletas en ángulo "V" sobre las líneas a plegar
+5. Plegar siguiendo la imagen: aproximadamente -20°, 60° y 30° respecto de la horizontal.
+6. Colocar los seis laterales de 15 mm, desbarbar y verificar que no interfiera con las bandejas ni las paredes.
+  <div style="display:flex; justify-content:center;
+            align-items:flex-start; gap:2px; flex-wrap:wrap;">
+  <img src="img/manual/ByvP9Av2Ml.png"
+       alt="Imagen 1"
+       style="width:28%; height:auto;">
+  <img src="img/manual/SJy9pCD2Mg.png"
+       alt="Imagen 2"
+       style="width:30%; height:auto;">
+  <img src="img/manual/Hkmhl1dnzg.png"
+       alt="Imagen 3"
+       style="width:50%; height:auto;">
+  </div>

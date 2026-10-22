@@ -12,6 +12,7 @@ Requisitos:
     - markdown
     - pymdown-extensions
     - pyyaml
+    - pillow
     - libreoffice (headless)
 """
 
@@ -40,6 +41,10 @@ def check_deps():
         import yaml  # noqa: F401
     except ImportError:
         sys.exit("Falta: pip install pyyaml")
+    try:
+        import PIL  # noqa: F401
+    except ImportError:
+        sys.exit("Falta: pip install pillow")
     if not shutil.which("libreoffice"):
         sys.exit(
             "Falta LibreOffice. Instalar con:\n"
@@ -125,7 +130,7 @@ def nav_files_from_mkdocs() -> list[Path]:
         if isinstance(item, dict):
             for value in item.values():
                 if isinstance(value, str):
-                    if value not in EXCLUDED_PAGES:
+                    if value.endswith(".md") and value not in EXCLUDED_PAGES:
                         path = DOCS_DIR / value
                         if path.exists():
                             files.append(path)
@@ -202,6 +207,18 @@ def postprocess_html(body: str) -> str:
     # --- Imágenes: forzar ancho máximo efectivo y centrado para LibreOffice ---
     def img_style_repl(match: re.Match) -> str:
         tag = match.group(0)
+        # LibreOffice requiere dimensiones explícitas para conservar la proporción.
+        src = re.search(r'\bsrc="([^"]+)"', tag)
+        image_path = DOCS_DIR / src.group(1) if src else None
+        if image_path is not None and image_path.is_file():
+            from PIL import Image
+
+            with Image.open(image_path) as img:
+                width, height = img.size
+            scale = min(600 / width, 500 / height, 1)
+            width, height = round(width * scale), round(height * scale)
+            tag = re.sub(r'\s+(?:width|height|style)="[^"]*"', '', tag)
+            return tag.replace('<img', f'<img width="{width}" height="{height}"', 1)
         # Quitar atributos width/height para que el CSS controle la escala.
         tag = re.sub(r'\s+width="[^"]*"', '', tag)
         tag = re.sub(r'\s+height="[^"]*"', '', tag)
@@ -305,7 +322,7 @@ def main():
         metavar="FMT",
         help="Formatos a generar: pdf docx html (default: pdf)",
     )
-    parser.add_argument("--title", default="LibreIncu-150 — Manual de fabricación", help="Título del documento")
+    parser.add_argument("--title", default="Manual de Montaje - Incubadora Libreincu 150 v1", help="Título del documento")
     parser.add_argument(
         "--no-break", dest="page_breaks", action="store_false",
         help="No insertar saltos de página entre archivos",
