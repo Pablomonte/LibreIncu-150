@@ -8,7 +8,7 @@ Este manual describe el proceso de montaje de la incubadora Libreincu 150 v1, un
 
 ![Interior de la incubadora real: ventilador superior, bandejas y deflector inferior](img/manual/incubadora-interior.png){ width=300 }
 
-*Figura 1. Interior del equipo real. Fotografía de la fuente original.*
+*Figura 1. Interior del equipo.*
 
 ### Dimensiones
 
@@ -126,7 +126,7 @@ Montar la placa Olivia Control en el gabinete previamente acoplado al tablero el
   <img src="img/manual/step-down.png" alt="Step-down utilizado para la alimentación del módulo de relés" style="width:19%; height:auto;">
 </div>
 
-*Figuras 6–8. J6, módulo de relés y step-down del equipo real. La alimentación JVCC de los relés es de 5 V; Hum/GPIO 17 debe accionar el mismo canal cuya salida NO conmuta la bomba.*
+*Figuras 6–8. J6, módulo de relés y step-down. La alimentación JVCC de los relés es de 5 V; Hum/GPIO 17 debe accionar el mismo canal cuya salida NormalOpen conmuta la bomba.*
 
 | Señal de J6 | Rótulo de la fotografía |
 |---|---|
@@ -194,7 +194,7 @@ Los finales de carrera interrumpen las señales de mando del puente H:
     - Ajustar el acople de 8 mm al motor y al tornillo.
     - Colocar el soporte del motor revisando que las distancias entre acoples no superen 1 mm ni queden apretadas.
 
-![Vista CAD del husillo vertical, los dos soportes KP08 y el acople superior](img/cad/husillo-kp08-acople.png){ width=280 }
+![Vista CAD del husillo vertical, los dos soportes KP08 y el acople superior](img/cad/husillo-kp08-acople.png){ width=180 }
 
 *Vista CAD de referencia: husillo, KP08 y acople, extraídos de LibreIncu_Rediseno_Despiece.FCStd. El carro, los finales de carrera y el vínculo se consultan en la fotografía del equipo real; el archivo CAD los señala como pendientes de ajuste.*
 
