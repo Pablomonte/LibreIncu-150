@@ -102,9 +102,12 @@ Montar la placa Olivia Control en el gabinete previamente acoplado al tablero el
 
 **Conector J11 — I2C.**
 
-![Conector J11 de Olivia con SDA, SCL, VCC y GND rotulados](img/manual/j11-bme280.png){ width=400 }
+<div style="display:flex; justify-content:center; align-items:flex-start; gap:12px; flex-wrap:wrap;">
+  <img src="img/manual/j11-bme280.png" alt="Conector J11 de Olivia con SDA, SCL, VCC y GND rotulados" style="width:30%; height:auto;">
+  <img src="img/manual/sensor-bme280.png" alt="Sensor BME280 con los terminales VIN, GND, SCL y SDA visibles" style="width:30%; height:auto;">
+</div>
 
-*Figura 4. J11 y sus señales, según el rótulo de la fotografía original.*
+*Figuras 4 y 5. J11 y sensor BME280, según las fotografías originales.*
 
 | Señal de J11 | Rótulo de la fotografía |
 |---|---|
@@ -113,21 +116,17 @@ Montar la placa Olivia Control en el gabinete previamente acoplado al tablero el
 | VCC | 3,3 V |
 | GND | GND |
 
-![Sensor BME280 con los terminales VIN, GND, SCL y SDA visibles](img/manual/sensor-bme280.png){ width=280 }
-
-*Figura 5. Terminales del sensor BME280 de la fuente original.*
-
 ### 4.3 Conexión al relé del Humidificador
 
 **Conector J6.** La alimentación de los relés del módulo, **JVCC**, se conecta a la salida de **5 V CC** del step-down.
 
-![Step-down utilizado para la alimentación del módulo de relés](img/manual/step-down.png){ width=220 }
+<div style="display:flex; justify-content:center; align-items:flex-start; gap:12px; flex-wrap:wrap;">
+  <img src="img/manual/j6-humidificador.png" alt="Conector J6 rotulado con VCC de 3,3 V, Hum/GPIO 17 y GND" style="width:30%; height:auto;">
+  <img src="img/manual/modulo-reles.png" alt="Módulo de dos relés utilizado en el equipo real" style="width:30%; height:auto;">
+  <img src="img/manual/step-down.png" alt="Step-down utilizado para la alimentación del módulo de relés" style="width:19%; height:auto;">
+</div>
 
-*Figura 6. Step-down del equipo real.*
-
-![Conector J6 rotulado con VCC de 3,3 V, Hum/GPIO 17 y GND](img/manual/j6-humidificador.png){ width=400 }
-
-*Figura 7. J6: el rótulo distingue VCC de 3,3 V y la señal Hum/GPIO 17. La alimentación JVCC del módulo de relés es de 5 V.*
+*Figuras 6–8. J6, módulo de relés y step-down del equipo real. La alimentación JVCC de los relés es de 5 V; Hum/GPIO 17 debe accionar el mismo canal cuya salida NO conmuta la bomba.*
 
 | Señal de J6 | Rótulo de la fotografía |
 |---|---|
@@ -137,10 +136,6 @@ Montar la placa Olivia Control en el gabinete previamente acoplado al tablero el
 
 Los contactos **NO —normalmente abiertos—** del relé se conectan como interruptor en uno de los cables de alimentación de la bomba de agua.
 
-![Módulo de dos relés utilizado en el equipo real](img/manual/modulo-reles.png){ width=320 }
-
-*Figura 8. Módulo de relés del equipo real.*
-
 Conectar **Hum/GPIO 17 a la entrada IN1 o IN2 del canal elegido**. La bomba debe conectarse a la salida NO de **ese mismo relé**. Puede utilizarse cualquiera de los dos canales, siempre que la entrada de control y la salida de la bomba correspondan al mismo relé.
 
 Conectar GND y VCC del módulo a las señales correspondientes de J6, conservando la alimentación JVCC de los relés a 5 V CC.
@@ -149,9 +144,12 @@ Conectar GND y VCC del módulo a las señales correspondientes de J6, conservand
 
 **Conector J9 — Motor A.** Retirar el jumper que normalmente puentea **ENA** en el módulo.
 
-![Conector J9 rotulado con GND y GPIO 2, 15 y 13](img/manual/j9-puente-h.png){ width=260 }
+<div style="display:flex; justify-content:center; align-items:flex-start; gap:12px; flex-wrap:wrap;">
+  <img src="img/manual/j9-puente-h.png" alt="Conector J9 rotulado con GND y GPIO 2, 15 y 13" style="width:25%; height:auto;">
+  <img src="img/manual/modulo-puente-h.png" alt="Módulo puente H con alimentación, entradas IN1 e IN2 y ENA rotuladas" style="width:50%; height:auto;">
+</div>
 
-*Figura 9. Señales de J9 en la fotografía original. Los asteriscos indican la interrupción mediante finales de carrera.*
+*Figuras 9 y 10. Señales de J9 y conexiones rotuladas del puente H; los asteriscos indican la interrupción mediante finales de carrera.*
 
 | Señal de J9 | Conexión al puente H |
 |---|---|
@@ -159,10 +157,6 @@ Conectar GND y VCC del módulo a las señales correspondientes de J6, conservand
 | GPIO 2 | IN1, pasando por el final de carrera A |
 | GPIO 15 | IN2, pasando por el final de carrera B |
 | GPIO 13 | ENA |
-
-![Módulo puente H con alimentación, entradas IN1 e IN2 y ENA rotuladas](img/manual/modulo-puente-h.png){ width=440 }
-
-*Figura 10. Puente H: conexiones rotuladas en la fuente original.*
 
 ### 4.5 Conexiones de Sensores Reed
 
@@ -206,19 +200,22 @@ Los finales de carrera interrumpen las señales de mando del puente H:
 
 ### 5.2 Identificación de los Soportes
 
-![Plano del soporte KP08 para el tornillo, extraído de la fuente original](img/manual/kp08-dimensiones.png){ width=550 }
+<div style="display:flex; justify-content:center; align-items:flex-start; gap:12px; flex-wrap:wrap;">
+  <img src="img/manual/kp08-dimensiones.png" alt="Plano del soporte KP08 para el tornillo, extraído de la fuente original" style="width:40%; height:auto;">
+  <img src="img/manual/kl08-dimensiones.png" alt="Plano del soporte de bandejas KFL08, denominado KL08 en el texto original" style="width:40%; height:auto;">
+</div>
 
-*Figura 13. Referencia del soporte KP08 del tornillo.*
-
-![Plano del soporte de bandejas KFL08, denominado KL08 en el texto original](img/manual/kl08-dimensiones.png){ width=550 }
-
-*Figura 14. Soporte de bandejas: el plano de la fuente lo identifica como KFL08; el texto original utiliza KL08.*
+*Figuras 13 y 14. Referencias de los soportes KP08 y KFL08; el texto original utiliza KL08 para el soporte de bandejas.*
 
 ## Deflector
 
-![Chapa del deflector antes del plegado](img/manual/deflector-chapa.png){ width=550 }
+<div style="display:flex; justify-content:center; align-items:flex-start; gap:2px; flex-wrap:wrap;">
+  <img src="img/manual/deflector-chapa.png" alt="Chapa del deflector antes del plegado" style="width:28%; height:auto;">
+  <img src="img/manual/deflector-plegado.png" alt="Deflector plegado, con sus tres paños y pestañas laterales" style="width:30%; height:auto;">
+  <img src="img/manual/deflector-instalado.png" alt="Deflector instalado debajo de las bandejas" style="width:50%; height:auto;">
+</div>
 
-*Figura 15. Chapa del deflector de la fuente original.*
+*Figuras 15–17. Chapa del deflector, plegado e instalación debajo de las bandejas.*
 
 | Parámetro del desarrollo | Medida confirmada |
 |---|---|
@@ -235,11 +232,3 @@ Los finales de carrera interrumpen las señales de mando del puente H:
 3. Cortar las aletas en V sobre las líneas que se van a plegar.
 4. Dar al paño principal una inclinación de **20° hacia abajo**, con pliegues de **60° y 30°**, siguiendo la disposición de las fotografías de la fuente.
 5. Preparar los seis laterales de 15 mm, desbarbar y verificar que el deflector no interfiera con las bandejas ni las paredes.
-
-![Deflector plegado, con sus tres paños y pestañas laterales](img/manual/deflector-plegado.png){ width=550 }
-
-*Figura 16. Deflector plegado del equipo real.*
-
-![Deflector instalado debajo de las bandejas](img/manual/deflector-instalado.png){ width=300 }
-
-*Figura 17. Deflector instalado debajo de las bandejas.*
