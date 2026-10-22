@@ -73,7 +73,9 @@ CSS = """
   h1 { font-size: 16pt; border-bottom: 2px solid #333; padding-bottom: 6px; margin-top: 40px; }
   h2 { font-size: 13pt; color: #222; margin-top: 30px; }
   h3 { font-size: 11pt; font-style: italic; margin-top: 20px; }
+  h1, h2, h3, h4 { page-break-after: avoid; }
   table { border-collapse: collapse; width: 100%; margin: 16px 0; font-size: 10pt; }
+  table, tr { page-break-inside: avoid; }
   th { background: #e8e8e8; border: 1px solid #999; padding: 6px 10px; text-align: left; }
   td { border: 1px solid #bbb; padding: 5px 10px; vertical-align: top; }
   tr:nth-child(even) td { background: #f7f7f7; }
@@ -231,6 +233,14 @@ def postprocess_html(body: str) -> str:
         return tag
 
     body = re.sub(r'<img[^>]+>', img_style_repl, body)
+
+    # Mantener cada imagen junto a su pie en el documento imprimible.
+    body = re.sub(
+        r'<p>(<img[^>]+>)</p>\s*<p>(<em>.*?</em>)</p>',
+        r'<p style="page-break-inside: avoid;">\1<br>\2</p>',
+        body,
+        flags=re.DOTALL,
+    )
 
     return body
 

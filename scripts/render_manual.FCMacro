@@ -1,0 +1,76 @@
+"""Renderiza vistas del FCStd existente sin modificarlo ni guardarlo.
+
+Ejecutar con FreeCAD: definir LIBREINCU_FCSTD y LIBREINCU_RENDER_DIR.
+Las capturas conservan la geometría y las posiciones del documento.
+"""
+import os
+import json
+from pathlib import Path
+import FreeCAD as App
+import FreeCADGui as Gui
+from PySide import QtCore, QtGui
+
+source = Path(os.environ['LIBREINCU_FCSTD'])
+output = Path(os.environ['LIBREINCU_RENDER_DIR'])
+output.mkdir(parents=True, exist_ok=True)
+doc = App.openDocument(str(source))
+view = Gui.activeDocument().activeView()
+view.setCameraType('Orthographic')
+Gui.getMainWindow().resize(1400,1100)
+Gui.activateWorkbench('PartWorkbench')
+features = [o for o in doc.Objects if o.TypeId == 'Part::Feature']
+root=doc.getObject('despiece_libreincu')
+for o in doc.Objects:
+    if o.ViewObject:
+        if o.TypeId == 'App::Part':
+            o.ViewObject.Visibility=True
+        elif o.TypeId != 'Part::Feature':
+            o.ViewObject.Visibility=False
+manifest=[]
+
+def capture(name, groups, angle='iso'):
+    for o in features:
+        o.ViewObject.Visibility = any(o.Name.startswith(g+'_pieza_') for g in groups)
+        o.ViewObject.DisplayMode='Flat Lines'
+        o.ViewObject.LineWidth=1.0
+        color=(0.70,0.74,0.77)
+        if o.Name.startswith('soporte_'): color=(0.18,0.40,0.56)
+        elif o.Name.startswith(('bandeja_','cuna_brazo_')): color=(0.83,0.67,0.30)
+        elif o.Name.startswith('acople_'): color=(0.25,0.48,0.42)
+        o.ViewObject.ShapeColor=color
+        o.ViewObject.DiffuseColor=[color] * len(o.Shape.Faces)
+    width,height = (800,1400) if name == 'husillo-kp08-acople' else (1400,1000)
+    Gui.getMainWindow().resize(width,height)
+    Gui.updateGui()
+    if angle == 'front':
+        view.viewRear()
+    else:
+        view.viewAxonometric()
+    Gui.updateGui()
+    view.fitAll()
+    Gui.updateGui()
+    view.fitAll()
+    path = output/(name+'.png')
+    view.saveImage(str(path),width,height,'White')
+    # Extraer el área de geometría de la captura, conservando sus píxeles.
+    image = QtGui.QImage(str(path))
+    left,top,right,bottom = width,height,-1,-1
+    for y in range(height):
+        for x in range(width):
+            if (image.pixel(x,y) & 0xffffff) != 0xffffff:
+                left,top = min(left,x),min(top,y)
+                right,bottom = max(right,x),max(bottom,y)
+    if right < left:
+        raise RuntimeError('Captura vacía: '+name)
+    margin = 30
+    left,top = max(0,left-margin),max(0,top-margin)
+    right,bottom = min(width,right+margin+1),min(height,bottom+margin+1)
+    image.copy(left,top,right-left,bottom-top).save(str(path))
+    manifest.append({'archivo':name+'.png','componentes':groups,'camara':angle})
+
+tray_groups=[o.Name for o in root.Group if o.Name.startswith(('bandeja_', 'eje_bandeja_', 'soporte_KL08_', 'cuna_brazo_'))]
+capture('bandejas-y-soportes',tray_groups)
+capture('husillo-kp08-acople',['husillo_8mm_400mm','soporte_KP08_superior','soporte_KP08_inferior','acople_8x8_motor'])
+(output/'vistas.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2)+'\n')
+App.closeDocument(doc.Name)
+QtCore.QTimer.singleShot(0,Gui.getMainWindow().close)

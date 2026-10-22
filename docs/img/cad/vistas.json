@@ -1,0 +1,33 @@
+[
+  {
+    "archivo": "bandejas-y-soportes.png",
+    "componentes": [
+      "eje_bandeja_1",
+      "bandeja_1",
+      "cuna_brazo_bandeja_1",
+      "soporte_KL08_1_izquierda",
+      "soporte_KL08_1_derecha",
+      "eje_bandeja_2",
+      "bandeja_2",
+      "cuna_brazo_bandeja_2",
+      "soporte_KL08_2_izquierda",
+      "soporte_KL08_2_derecha",
+      "eje_bandeja_3",
+      "bandeja_3",
+      "cuna_brazo_bandeja_3",
+      "soporte_KL08_3_izquierda",
+      "soporte_KL08_3_derecha"
+    ],
+    "camara": "iso"
+  },
+  {
+    "archivo": "husillo-kp08-acople.png",
+    "componentes": [
+      "husillo_8mm_400mm",
+      "soporte_KP08_superior",
+      "soporte_KP08_inferior",
+      "acople_8x8_motor"
+    ],
+    "camara": "iso"
+  }
+]

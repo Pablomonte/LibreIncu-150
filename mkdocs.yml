@@ -2,8 +2,6 @@ site_name: LibreIncu-150
 site_description: Manual de Montaje - Incubadora Libreincu 150 v1
 site_url: https://pablomonte.github.io/LibreIncu-150/
 docs_dir: docs
-exclude_docs: |
-  img/piezas/manifiesto.md
 
 theme:
   name: material
@@ -44,11 +42,6 @@ markdown_extensions:
   - pymdownx.tasklist
   - pymdownx.highlight
   - pymdownx.superfences
-  - pymdownx.snippets:
-      base_path:
-        - .
-        - Rediseno
-      check_paths: true
 
 plugins:
   - search
