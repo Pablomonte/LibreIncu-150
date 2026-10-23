@@ -33,7 +33,7 @@ Este manual describe el proceso de montaje de la incubadora Libreincu 150 v1, un
 
 ![Tablero eléctrico del equipo real con protecciones, fuente, placa y módulos](img/manual/tablero-electrico.jpg){ width=500 }
 
-*Figura 2. Tablero eléctrico del equipo real.*
+*Figura 2. Tablero eléctrico del equipo.*
 
 | Componente | Descripción |
 |---|---|
@@ -45,7 +45,7 @@ Este manual describe el proceso de montaje de la incubadora Libreincu 150 v1, un
 
 ![Placa Olivia y conexiones de potencia rotuladas en la fuente original](img/manual/placa-olivia-potencia.png){ width=440 }
 
-*Figura 3. Placa Olivia: fotografía rotulada de la fuente original.*
+*Figura 3. Placa Olivia Control V2.*
 
 ### 2.2 Sistema Mecánico de Rotación
 
@@ -61,7 +61,7 @@ Este manual describe el proceso de montaje de la incubadora Libreincu 150 v1, un
 
 ![Vista CAD de las bandejas con sus ejes y soportes](img/cad/bandejas-y-soportes.png){ width=640 }
 
-*Vista CAD de referencia: bandejas, cunas, ejes y soportes, extraídos de LibreIncu_Rediseno_Despiece.FCStd. La geometría de las cunas contiene dimensiones pendientes de confirmar; esta vista muestra la disposición general.*
+*Vista CAD de referencia: bandejas, cunas, ejes y soportes, esta vista muestra la disposición general.*
 
 ### 2.3 Sistema de Humidificación
 
@@ -107,9 +107,9 @@ Montar la placa Olivia Control en el gabinete previamente acoplado al tablero el
   <img src="img/manual/sensor-bme280.png" alt="Sensor BME280 con los terminales VIN, GND, SCL y SDA visibles" style="width:30%; height:auto;">
 </div>
 
-*Figuras 4 y 5. J11 y sensor BME280, según las fotografías originales.*
+*Figuras 4 y 5. J11 y sensor BME280.*
 
-| Señal de J11 | Rótulo de la fotografía |
+| Señal de J11 | PinOut ESP32|
 |---|---|
 | SDA | GPIO 32 |
 | SCL | GPIO 33 |
@@ -128,7 +128,7 @@ Montar la placa Olivia Control en el gabinete previamente acoplado al tablero el
 
 *Figuras 6–8. J6, módulo de relés y step-down. La alimentación JVCC de los relés es de 5 V; Hum/GPIO 17 debe accionar el mismo canal cuya salida NormalOpen conmuta la bomba.*
 
-| Señal de J6 | Rótulo de la fotografía |
+| Señal de J6 | PinOut ESP32 |
 |---|---|
 | VCC | 3,3 V |
 | Hum | GPIO 17 |
@@ -160,10 +160,10 @@ Conectar GND y VCC del módulo a las señales correspondientes de J6, conservand
 
 ### 4.5 Conexiones de Sensores Reed
 
-| Entrada | GPIO | Sensor |
+| Entrada | PinOut ESP32 | Sensor |
 |---|---|---|
-| Input4 | 35 | Reed A: posición superior |
-| Input3 | 34 | Reed B: posición inferior |
+| Input4 | GPIO 35 | Reed A: posición superior |
+| Input3 | GPIO 34 | Reed B: posición inferior |
 
 ![Sensores reed A y B del mecanismo real](img/manual/sensores-reed.png){ width=280 }
 
@@ -180,23 +180,23 @@ Los finales de carrera interrumpen las señales de mando del puente H:
 
 ![Mecanismo real rotulado: acople, KP08, tornillo THSL, carro, reed y finales de carrera](img/manual/rotacion-equipo-real.png){ width=380 }
 
-*Figura 12. Disposición del mecanismo en el equipo real.*
+*Figura 12. Disposición del mecanismo de rotación.*
 
 ### 5.1 Ensamblaje del Tornillo de Rotación
 
 1. **Montar el carro de elevación.**
     - Insertar y ajustar las dos tuercas en el carro.
     - Enhebrar el carro sobre el tornillo.
-    - Ajustar la altura inicial, de la mitad hacia abajo.
+    - Ajustar la altura inicial, de la mitad del husillo hacia abajo.
 2. **Montar el soporte del motor y los soportes KP08.**
-    - Anclar un soporte KP08 al mueble y ajustar el tornillo THSL mediante los prisioneros del soporte con una llave Allen de 1,5 mm. Dejar que sobresalga hacia arriba aproximadamente 12 mm.
+    - Anclar el soporte superior KP08 al mueble y ajustar el husillo THSL mediante los prisioneros del soporte con una llave Allen de 1,5 mm. Dejar que sobresalga hacia arriba aproximadamente 12 mm.
     - Colocar y anclar el otro soporte KP08 al mueble.
     - Ajustar el acople de 8 mm al motor y al tornillo.
     - Colocar el soporte del motor revisando que las distancias entre acoples no superen 1 mm ni queden apretadas.
 
 ![Vista CAD del husillo vertical, los dos soportes KP08 y el acople superior](img/cad/husillo-kp08-acople.png){ width=180 }
 
-*Vista CAD de referencia: husillo, KP08 y acople, extraídos de LibreIncu_Rediseno_Despiece.FCStd. El carro, los finales de carrera y el vínculo se consultan en la fotografía del equipo real; el archivo CAD los señala como pendientes de ajuste.*
+*Vista CAD de referencia: husillo, KP08 y acople.*
 
 ### 5.2 Identificación de los Soportes
 
@@ -205,7 +205,7 @@ Los finales de carrera interrumpen las señales de mando del puente H:
   <img src="img/manual/kl08-dimensiones.png" alt="Plano del soporte de bandejas KFL08, denominado KL08 en el texto original" style="width:40%; height:auto;">
 </div>
 
-*Figuras 13 y 14. Referencias de los soportes KP08 y KFL08; el texto original utiliza KL08 para el soporte de bandejas.*
+*Figuras 13 y 14. Referencias de los soportes KP08 y KFL08.*
 
 ## Deflector
 
@@ -217,7 +217,7 @@ Los finales de carrera interrumpen las señales de mando del puente H:
 
 *Figuras 15–17. Chapa del deflector, plegado e instalación debajo de las bandejas.*
 
-| Parámetro del desarrollo | Medida confirmada |
+| Parámetro del desarrollo | Medida |
 |---|---|
 | Espesor de chapa | 0,5 mm |
 | Largo del desarrollo | 225 mm |
