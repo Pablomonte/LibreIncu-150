@@ -63,6 +63,8 @@ Este manual describe el proceso de montaje de la incubadora Libreincu 150 v1, un
 
 *Vista CAD de referencia: bandejas, cunas, ejes y soportes, esta vista muestra la disposición general.*
 
+Descargar STEP del diseño guardado: [conjunto completo](cad/LibreIncu_Rediseno_Despiece.step), [bandejas y soportes](cad/bandejas-y-soportes.step), [husillo, KP08 y acople](cad/husillo-kp08-acople.step).
+
 ### 2.3 Sistema de Humidificación
 
 | Componente | Descripción |

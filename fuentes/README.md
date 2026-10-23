@@ -8,22 +8,37 @@ El manual publicado está en `docs/index.md`.
 
 ## CAD utilizado para ilustraciones
 
-Archivo: `LibreIncu_Rediseno_Despiece.FCStd`.
+Archivo fuente: `/home/pablo/repos/2Incubadora/Rediseno/LibreIncu_Rediseno_Despiece.FCStd`.
 SHA-256: `5ab180d757550a3b983e3bd64d6d23e9dcaabd0f47e3b2760ac321a8220ceab8`.
 
-Se conservó una copia del documento utilizado. El archivo original se abrió para lectura y no se guardó ni modificó. Las vistas muestran componentes existentes, sin reconstruir piezas. Se ajustaron la cámara y los colores para facilitar su lectura y se extrajo el área visible de cada captura, quitando los márgenes blancos sin retocar la geometría.
+El archivo original se abrió para lectura y no se guardó ni modificó. Las vistas muestran componentes existentes, sin reconstruir piezas. Se ajustaron la cámara y los colores para facilitar su lectura y se extrajo el área visible de cada captura, quitando los márgenes blancos sin retocar la geometría.
 
-Brief de las vistas: unidades del documento en mm; X es ancho, Y profundidad, Z altura. La cámara y la iluminación solo afectan las capturas. Salidas: bandejas con ejes y soportes; husillo con KP08 y acople. Validación: selección por nombres de objetos, revisión visual de las capturas y presencia de las advertencias sobre piezas provisionales. No se generan ni modifican STEP o mallas.
+Brief de exportación y vistas: se utiliza el FCStd guardado como fuente, sin ejecutar los generadores anteriores ni reconstruir piezas. Unidades en mm; X es ancho, Y profundidad, Z altura. Se conservan dimensiones y posiciones del documento. Salidas STEP en `docs/cad/`: conjunto completo (213 sólidos), bandejas con ejes, cunas y soportes (78 sólidos), y husillo con KP08 y acople (105 sólidos). Las dos selecciones parciales coinciden con las del macro de capturas. La cámara y los colores solo afectan las capturas.
+
+`scripts/export_manual.py` exporta copias con posiciones globales, incluyendo los giros y desplazamientos de todos los grupos `App::Part`. Esto es necesario para conservar la posición del deflector: exportar directamente las piezas sueltas omite la transformación de su grupo. Se reimporta cada STEP para comprobar geometría válida, sólidos cerrados de volumen positivo, número de sólidos, volumen y límites XYZ de cada pieza contra la fuente en coordenadas globales. Para las nueve piezas del deflector se comprueba además la coincidencia geométrica mediante el volumen de intersección. `cad-exportacion.json` registra los resultados y los SHA-256 de fuente y salidas. `docs/img/cad/vistas.json` registra el SHA-256 del mismo FCStd para las imágenes.
+
+El conjunto completo también se sincronizó con `LibreIncu_Rediseno_Layout_Preciso.step` en la carpeta del modelo original. Los STEP de otros generadores se conservan como versiones independientes.
 
 El FCStd contiene dimensiones y posiciones provisionales del carro, finales de carrera, cunas y vínculo. No se trasladan esas cotas al manual como medidas de fabricación. Para los detalles del mecanismo se conserva la fotografía del equipo real. El deflector se documenta con las fotografías originales y las medidas confirmadas, sin utilizar la posición guardada del deflector en el CAD como instrucción de montaje.
 
 Para regenerar las capturas con FreeCAD y su interfaz gráfica:
 
 ```bash
-LIBREINCU_FCSTD="$PWD/fuentes/LibreIncu_Rediseno_Despiece.FCStd" \
+LIBREINCU_FCSTD="/home/pablo/repos/2Incubadora/Rediseno/LibreIncu_Rediseno_Despiece.FCStd" \
 LIBREINCU_RENDER_DIR="$PWD/docs/img/cad" \
 FreeCAD scripts/render_manual.FCMacro
 ```
+
+Para regenerar los STEP, ejecutar desde la raíz del repositorio con un Python que pueda importar `FreeCAD` y `Part`:
+
+```bash
+python scripts/export_manual.py /home/pablo/repos/2Incubadora/Rediseno/LibreIncu_Rediseno_Despiece.FCStd \
+  docs/cad --manifest fuentes/cad-exportacion.json
+```
+
+Con un AppImage montado, ese Python está disponible como `AppRun python`; definir `PYTHONPATH` apuntando a `usr/lib` dentro del montaje. Después de regenerar las capturas, actualizar el PDF con `python docs/build_doc.py` usando las dependencias indicadas en ese script.
+
+Antes de publicar cambios del exportador, ejecutar `python scripts/test_export_manual.py` con ese mismo Python de FreeCAD. La prueba comprueba transformaciones anidadas y la reimportación STEP, incluyendo un caso donde los límites y el volumen del conjunto ocultan una pieza desplazada. Todos sus archivos se crean en una carpeta temporal.
 
 ## Aclaraciones confirmadas por el usuario
 

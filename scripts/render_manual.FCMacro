@@ -5,12 +5,14 @@ Las capturas conservan la geometría y las posiciones del documento.
 """
 import os
 import json
+import hashlib
 from pathlib import Path
 import FreeCAD as App
 import FreeCADGui as Gui
 from PySide import QtCore, QtGui
 
 source = Path(os.environ['LIBREINCU_FCSTD'])
+source_sha256 = hashlib.sha256(source.read_bytes()).hexdigest()
 output = Path(os.environ['LIBREINCU_RENDER_DIR'])
 output.mkdir(parents=True, exist_ok=True)
 doc = App.openDocument(str(source))
@@ -66,7 +68,8 @@ def capture(name, groups, angle='iso'):
     left,top = max(0,left-margin),max(0,top-margin)
     right,bottom = min(width,right+margin+1),min(height,bottom+margin+1)
     image.copy(left,top,right-left,bottom-top).save(str(path))
-    manifest.append({'archivo':name+'.png','componentes':groups,'camara':angle})
+    manifest.append({'archivo':name+'.png','componentes':groups,'camara':angle,
+                     'fuente':source.name,'sha256_fuente':source_sha256})
 
 tray_groups=[o.Name for o in root.Group if o.Name.startswith(('bandeja_', 'eje_bandeja_', 'soporte_KL08_', 'cuna_brazo_'))]
 capture('bandejas-y-soportes',tray_groups)

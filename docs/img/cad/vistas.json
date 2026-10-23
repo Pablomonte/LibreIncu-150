@@ -18,7 +18,9 @@
       "soporte_KL08_3_izquierda",
       "soporte_KL08_3_derecha"
     ],
-    "camara": "iso"
+    "camara": "iso",
+    "fuente": "LibreIncu_Rediseno_Despiece.FCStd",
+    "sha256_fuente": "5ab180d757550a3b983e3bd64d6d23e9dcaabd0f47e3b2760ac321a8220ceab8"
   },
   {
     "archivo": "husillo-kp08-acople.png",
@@ -28,6 +30,8 @@
       "soporte_KP08_inferior",
       "acople_8x8_motor"
     ],
-    "camara": "iso"
+    "camara": "iso",
+    "fuente": "LibreIncu_Rediseno_Despiece.FCStd",
+    "sha256_fuente": "5ab180d757550a3b983e3bd64d6d23e9dcaabd0f47e3b2760ac321a8220ceab8"
   }
 ]
