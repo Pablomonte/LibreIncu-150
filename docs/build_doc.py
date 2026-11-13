@@ -19,6 +19,7 @@ Requisitos:
 from __future__ import annotations
 
 import argparse
+import re
 import shutil
 import subprocess
 import sys
@@ -218,6 +219,10 @@ def postprocess_html(body: str) -> str:
             with Image.open(image_path) as img:
                 width, height = img.size
             scale = min(600 / width, 500 / height, 1)
+            # Ancho fijo en px (miniaturas): respetarlo.
+            fixed = re.search(r'style="[^"]*\bwidth:\s*(\d+)px', tag)
+            if fixed:
+                scale = min(scale, int(fixed.group(1)) * 0.75 / width)
             width, height = round(width * scale), round(height * scale)
             tag = re.sub(r'\s+(?:width|height|style)="[^"]*"', '', tag)
             return tag.replace('<img', f'<img width="{width}" height="{height}"', 1)
@@ -267,6 +272,7 @@ def build_html(files: list[Path], title: str, page_breaks: bool, exclude_invento
             "fenced_code",
             "sane_lists",
             "attr_list",
+            "md_in_html",
             "admonition",
             "pymdownx.snippets",
             "pymdownx.superfences",
@@ -283,9 +289,13 @@ def build_html(files: list[Path], title: str, page_breaks: bool, exclude_invento
     for i, path in enumerate(files):
         md.reset()
         raw = path.read_text(encoding="utf-8")
+        # Front matter de MkDocs (íconos de la navegación): no va al PDF.
+        raw = re.sub(r"\A---\n.*?\n---\n", "", raw, flags=re.S)
         if exclude_inventory:
             raw = strip_inventory_snippets(raw)
         body = md.convert(raw)
+        # Bloques solo para el sitio (visor 3D en un iframe): no van al PDF.
+        body = re.sub(r'<div class="solo-web[^"]*">.*?</div>', "", body, flags=re.S)
         body = postprocess_html(body)
         if page_breaks and i < len(files) - 1:
             body += '\n<div class="page-break"></div>\n'
@@ -332,7 +342,7 @@ def main():
         metavar="FMT",
         help="Formatos a generar: pdf docx html (default: pdf)",
     )
-    parser.add_argument("--title", default="Manual de Montaje - Incubadora Libreincu 150 v1", help="Título del documento")
+    parser.add_argument("--title", default="Manual de fabricación y montaje - LibreIncu 150 v3", help="Título del documento")
     parser.add_argument(
         "--no-break", dest="page_breaks", action="store_false",
         help="No insertar saltos de página entre archivos",
