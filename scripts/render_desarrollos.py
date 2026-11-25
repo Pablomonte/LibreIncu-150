@@ -83,12 +83,12 @@ def finish(fig, ax, name, title, notes):
 
 
 def deflector():
-    width, tab, segments = 500.0, 15.0, (115.0, 60.0, 50.0)
+    width, tab, segments = 494.0, 15.0, (115.0, 60.0, 50.0)  # cámara de 464 + 2 lengüetas
     length = sum(segments)
     fig, ax = plt.subplots(figsize=(8.5, 5.2))
     draw(ax, CAD / 'Deflector_Aire.dxf')
-    dim(ax, (0, 0), (width, 0), -22, '500')
-    dim(ax, (tab, length), (width - tab, length), 18, '470 útil')
+    dim(ax, (0, 0), (width, 0), -22, '%g' % width)
+    dim(ax, (tab, length), (width - tab, length), 18, '%g útil' % (width - 2 * tab))
     dim(ax, (0, length), (tab, length), 18, '15', fs=8)
     dim(ax, (width - tab, length), (width, length), 18, '15', fs=8)
     y = 0.0
