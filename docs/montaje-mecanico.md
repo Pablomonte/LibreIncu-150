@@ -8,11 +8,15 @@ Las cotas de esta página se toman con el interior de la cámara como referencia
 
 ## Mueble
 
-Armar el cuerpo según el plano ALT-INC001-01-00 y la puerta según el ALT-INC001-03-00 del INTI ([carpeta de planos](https://github.com/Pablomonte/LibreIncu-150/tree/LibreIncu-150/HardWare/Mecanica)).
+Armar el cuerpo con las piezas de la [lista de corte](compra-y-corte.md#mueble) (Figura 2). Los laterales van entre las tapas; el techo y el frente del cajón, entre los laterales. Unir las placas con tarugos de 8 × 40 mm, salvo la tapa superior.
 
-- Unir las placas con tarugos de 8 × 40 mm y tornillos autoperforantes de 4,2 × 13 mm.
-- Colocar los perfiles de chapa en los cantos, el burlete tipo D en el marco y las cuatro patas de goma.
-- Montar la puerta con dos bisagras ficha de 63 mm y el cierre de tracción.
+1. **Laterales.** Unir los dos laterales sobre la tapa inferior, al ras de sus cantos.
+2. **Techo.** Colocarlo entre los laterales, con su cara superior a 112 mm del borde superior de los laterales: la cámara queda de 974 mm de alto. Las cotas «desde el techo» de esta página y las plantillas superiores se toman desde la cara inferior de esta pieza.
+3. **Frente del cajón.** Colocarlo entre los laterales, sobre el techo y al ras del frente.
+4. **Fondo.** Atornillarlo por detrás, sobre los cantos de los laterales y de la tapa inferior. Su borde superior queda al ras de los laterales.
+5. **Tapa superior.** Apoyarla sobre los laterales, el fondo y el frente del cajón, al ras del frente y de la cara trasera del fondo. No se encola: se levanta para abrir el cajón.
+6. **Puerta.** Montarla delante de la cámara con dos bisagras ficha de 63 mm y el cierre de tracción. Cubre desde abajo hasta el canto del techo; el frente del cajón, donde va el tablero eléctrico y de control, queda a la vista.
+7. **Terminación.** Colocar el burlete tipo D en el marco de la puerta y las cuatro patas de goma.
 
 ## Bandejas
 
@@ -30,13 +34,13 @@ Cada cuna lleva soldados dos muñones de barra Ø8, uno en el centro de cada bra
   <img src="img/manual/kl08-dimensiones.png" alt="Plano del soporte de bandejas KFL08" style="width:40%; height:auto;">
 </div>
 
-*Figuras 8 y 9. Soportes KP08 (husillo) y KFL08 (bandejas).*
+*Figuras 9 y 10. Soportes KP08 (husillo) y KFL08 (bandejas).*
 
 ## Rotación
 
 ![Mecanismo real rotulado: acople, KP08, tornillo THSL, carro, reed y finales de carrera](img/manual/rotacion-equipo-real.png){ width=380 }
 
-*Figura 10. Disposición del mecanismo de rotación.*
+*Figura 11. Disposición del mecanismo de rotación.*
 
 ### Husillo y motor
 
@@ -48,14 +52,14 @@ Cada cuna lleva soldados dos muñones de barra Ø8, uno en el centro de cada bra
     - El husillo va a **15 mm del lateral izquierdo** y a **40 mm del fondo**, desde **10 mm del techo** hacia abajo.
     - Anclar el soporte KP08 superior al mueble y ajustar el husillo con los prisioneros del soporte, con una llave Allen de 1,5 mm. Dejar que sobresalga hacia arriba unos 12 mm.
     - Colocar y anclar el otro soporte KP08 al mueble.
-    - Ajustar el acople de 8 mm al motor y al husillo.
-    - Colocar el soporte del motor, cuidando que la separación entre los extremos de los ejes en el acople no supere 1 mm y que no queden apretados.
+    - Atornillar la brida del motorreductor SP 8-18, una chapa ovalada de 0,5 mm, sobre el techo. El motor queda vertical en el cajón y su eje atraviesa la brida y el techo hacia abajo, alineado con el husillo.
+    - Ajustar el acople de 8 mm al eje del motor, justo debajo del techo, y al husillo, cuidando que la separación entre los extremos de los ejes no supere 1 mm y que no queden apretados.
 
 ### Carro
 
 ![Vista CAD del husillo con el carro plegado, los dos soportes KP08, los dos finales de carrera y los dos reed](img/cad/carro-y-finales-de-carrera.png){ width=180 }
 
-*Figura 11. Carro, finales de carrera y reed en el modelo.*
+*Figura 12. Carro, finales de carrera y reed en el modelo.*
 
 El alma del carro queda paralela al lateral, en el plano del husillo, con la ranura horizontal. El perno del carro va soldado a una planchuela de 10 mm, en el brazo del lado del husillo de la cuna superior, 40 mm sobre el eje y 180 mm hacia el fondo. El perno corre por la ranura: al subir y bajar el carro, las bandejas giran.
 
@@ -79,11 +83,11 @@ Los finales de carrera van de plano contra el lateral, detrás del husillo, y lo
 
 ![Deflector instalado debajo de las bandejas](img/manual/deflector-instalado.png){ width=320 }
 
-*Figura 12. Deflector instalado debajo de las bandejas.*
+*Figura 13. Deflector instalado debajo de las bandejas.*
 
 ![Corte lateral del modelo: ventilador, tres bandejas, deflector y fuente de calor, con el fondo a la derecha y el piso abajo](img/cad/corte-lateral.png){ width=300 }
 
-*Figura 13. Corte lateral del modelo, con el fondo a la derecha. El paño vertical del deflector queda a 60 mm del fondo y su borde más bajo a 300 mm del piso, sobre la chapa de impacto.*
+*Figura 14. Corte lateral del modelo, con el fondo a la derecha. El paño vertical del deflector queda a 60 mm del fondo y su borde más bajo a 300 mm del piso, sobre la chapa de impacto.*
 
 El deflector se fabrica según [Compra y corte](compra-y-corte.md#deflector).
 
@@ -101,7 +105,7 @@ La resistencia va debajo de la budinera, apretada contra su fondo por la contrap
   <img src="img/cad/fuente-de-calor-inferior.png" alt="Fuente de calor vista desde abajo: contraplaca bajo la budinera y fusible en la punta" style="width:48%; height:auto;">
 </div>
 
-*Figuras 14 y 15. Fuente de calor vista desde arriba y desde abajo: budinera, perfiles L, soportes de la nacedora, contraplaca (gris oscuro), fusible (amarillo) y chapa de impacto.*
+*Figuras 15 y 16. Fuente de calor vista desde arriba y desde abajo: budinera, perfiles L, soportes de la nacedora, contraplaca (gris oscuro), fusible (amarillo) y chapa de impacto.*
 
 | Altura desde el piso | Elemento |
 |---|---|
@@ -123,4 +127,4 @@ La resistencia va debajo de la budinera, apretada contra su fondo por la contrap
 
 1. **Chapa de impacto.** Colocarla en la punta de la budinera del lado del husillo, con el respaldo hacia esa punta y las alas hacia el centro. Su borde superior queda a 298 mm del piso, debajo del deflector. Fijarla a la budinera con tornillos autoperforantes de 4,2 × 13 mm o con remaches pop.
 2. **Aspersor.** Fijar la ménsula a la carcasa y montar la boquilla de 6 mm, apuntando a la chapa de impacto.
-3. **Bomba y electroválvula.** Conectarlas entre sí y montarlas encima de la cámara, dentro de una caja estanca con un desagote en el punto más bajo para las pérdidas ocasionales. Unirlas a la boquilla con manguera de 10 mm y el acople rápido de 10 a 6 mm.
+3. **Bomba y electroválvula.** Conectarlas entre sí y montarlas dentro de una caja estanca en el cajón superior, con un desagote en el punto más bajo para las pérdidas ocasionales. Unirlas a la boquilla con manguera de 10 mm y el acople rápido de 10 a 6 mm.
