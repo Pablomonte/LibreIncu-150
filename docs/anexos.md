@@ -6,7 +6,7 @@ icon: material/paperclip
 
 ## Planos de la v3
 
-Planos de fabricación de la v3 (código LI150-V3), con las cotas del modelo 3D. Cada plano está en PDF y en DXF, con las vistas en tamaño real, en la carpeta [`planos/v3`](https://github.com/Pablomonte/LibreIncu-150/tree/manual-v3/docs/planos/v3) del manual; el DXF tiene el mismo nombre que el PDF. Los detalles a otra escala van en otra hoja del mismo plano (H2, H3). Cotas en mm.
+Planos de fabricación de la v3 (código LI150-V3), con las cotas del modelo 3D. Cada plano está en PDF y en DXF, con las vistas en tamaño real, en la carpeta [`planos/v3`](https://github.com/Pablomonte/LibreIncu-150/tree/LibreIncu-150/docs/planos/v3) del manual; el DXF tiene el mismo nombre que el PDF. Los detalles a otra escala van en otra hoja del mismo plano (H2, H3). Cotas en mm.
 
 Miniaturas de los planos; cada una abre el PDF.
 
