@@ -64,29 +64,33 @@ EXCLUDED_PAGES = {"vista-3d.md", "inventario.md"}
 
 CSS = """
 <style>
+  /* Estilo de libreincu.cto.ar: paleta Tierra, títulos con serifa y texto sin serifa. LibreOffice toma solo la
+     primera fuente de cada lista: se usan las Liberation, que vienen con LibreOffice, en lugar de Fraunces e Inter. */
   @page { margin: 2.5cm 2.5cm 3cm 2.5cm; }
   body {
-    font-family: 'Liberation Serif', Georgia, serif;
-    font-size: 11pt;
+    font-family: 'Liberation Sans', Arial, sans-serif;
+    font-size: 10.5pt;
     line-height: 1.6;
-    color: #111;
+    color: #1C2620;
   }
-  h1 { font-size: 16pt; border-bottom: 2px solid #333; padding-bottom: 6px; margin-top: 40px; }
-  h2 { font-size: 13pt; color: #222; margin-top: 30px; }
-  h3 { font-size: 11pt; font-style: italic; margin-top: 20px; }
+  h1, h2, h3, h4 { font-family: 'Liberation Serif', Georgia, serif; font-weight: normal; color: #1F3326; }
+  h1 { font-size: 20pt; border-bottom: 2px solid #C2653A; padding-bottom: 6px; margin-top: 40px; }
+  h2 { font-size: 14pt; margin-top: 30px; }
+  h3 { font-family: 'Liberation Sans', Arial, sans-serif; font-size: 11pt; font-weight: bold; color: #1C2620; margin-top: 20px; }
   h1, h2, h3, h4 { page-break-after: avoid; }
-  table { border-collapse: collapse; width: 100%; margin: 16px 0; font-size: 10pt; }
+  a { color: #2C4A36; }
+  table { border-collapse: collapse; width: 100%; margin: 16px 0; font-size: 9.5pt; }
   table, tr { page-break-inside: avoid; }
-  th { background: #e8e8e8; border: 1px solid #999; padding: 6px 10px; text-align: left; }
-  td { border: 1px solid #bbb; padding: 5px 10px; vertical-align: top; }
-  tr:nth-child(even) td { background: #f7f7f7; }
-  hr { border: none; border-top: 1px solid #ccc; margin: 24px 0; }
+  th { background: #EAE1D4; color: #1F3326; border: 1px solid #D8CBB8; padding: 6px 10px; text-align: left; }
+  td { border: 1px solid #D8CBB8; padding: 5px 10px; vertical-align: top; }
+  tr:nth-child(even) td { background: #F7F3EE; }
+  hr { border: none; border-top: 1px solid #D8CBB8; margin: 24px 0; }
   code, pre {
     font-family: 'Liberation Mono', monospace;
-    background: #f4f4f4;
+    background: #EAE1D4;
     padding: 2px 5px;
     border-radius: 3px;
-    font-size: 9.5pt;
+    font-size: 9pt;
   }
   pre { padding: 10px; overflow-x: auto; }
   img {
@@ -96,9 +100,9 @@ CSS = """
     margin: 0.8em auto;
   }
   .admonition {
-    border: 1px solid #999;
-    border-left: 4px solid #2e7d32;
-    background: #f9f9f9;
+    border: 1px solid #D8CBB8;
+    border-left: 4px solid #2C4A36;
+    background: #EAE1D4;
     padding: 10px 14px;
     margin: 16px 0;
   }
@@ -106,16 +110,18 @@ CSS = """
     font-weight: bold;
     margin-bottom: 6px;
   }
-  .admonition.danger { border-left-color: #c62828; background: #ffebee; }
-  .admonition.warning { border-left-color: #f9a825; background: #fffde7; }
-  .admonition.info { border-left-color: #1565c0; background: #e3f2fd; }
-  .admonition.tip { border-left-color: #2e7d32; background: #e8f5e9; }
+  .admonition.danger { border-left-color: #C2653A; background: #F6E4DA; }
+  .admonition.warning { border-left-color: #F6BB26; background: #FDF1D3; }
+  .admonition.info { border-left-color: #2C4A36; background: #EAE1D4; }
+  .admonition.tip { border-left-color: #2C4A36; background: #EAE1D4; }
   ul.task-list { list-style: none; padding-left: 1.2em; }
   .task-list-item { margin: 4px 0; }
   .task-list-item input[type="checkbox"] {
     margin-right: 0.5em;
     vertical-align: middle;
   }
+  .kicker { font-size: 8pt; letter-spacing: 2px; text-transform: uppercase; color: #2C4A36; }
+  .sub, .lead { font-family: 'Liberation Serif', Georgia, serif; font-style: italic; font-size: 13pt; color: #1F3326; }
   .page-break { page-break-after: always; }
 </style>
 """
@@ -151,11 +157,11 @@ def nav_files_from_mkdocs() -> list[Path]:
     return files
 
 
-ADMONITION_COLORS = {
-    "danger": ("#c62828", "#ffebee"),
-    "warning": ("#f9a825", "#fffde7"),
-    "info": ("#1565c0", "#e3f2fd"),
-    "tip": ("#2e7d32", "#e8f5e9"),
+ADMONITION_COLORS = {  # paleta Tierra de libreincu.cto.ar
+    "danger": ("#C2653A", "#F6E4DA"),
+    "warning": ("#F6BB26", "#FDF1D3"),
+    "info": ("#2C4A36", "#EAE1D4"),
+    "tip": ("#2C4A36", "#EAE1D4"),
 }
 
 
