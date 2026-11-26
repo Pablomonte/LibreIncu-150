@@ -61,6 +61,10 @@ Con un AppImage montado, ese Python está disponible como `AppRun python`; defin
 
 Antes de publicar cambios del exportador, ejecutar `python scripts/test_export_manual.py` con ese mismo Python de FreeCAD. La prueba comprueba transformaciones anidadas y la reimportación STEP, incluyendo un caso donde los límites y el volumen del conjunto ocultan una pieza desplazada. Todos sus archivos se crean en una carpeta temporal.
 
+## Planos
+
+`docs/planos/v3/` tiene los planos de fabricación de la v3 (LI150-V3), PDF y DXF, copiados sin cambios de `Rediseno/planos/`. Los escriben los generadores de `Rediseno/planos/fuentes/` (`todos.py`) con las cotas de `LibreIncu_Rediseno_Despiece.py`, `fuente_calor.py` y `plantillas_perforacion.py`; la lista, el código y las decisiones están en `Rediseno/PLANOS_V3.md`. `docs/img/planos/v3/*.png` son sus miniaturas: la primera página de cada PDF, pasada a PNG de 420 px de ancho con `pdftoppm -scale-to 420`, sin retoques. `LI150-V3-06-04_desarrollo.png` (Figura 7) es el desarrollo de ese plano, recortado de la página pasada a 200 ppp.
+
 ## Aclaraciones confirmadas por el usuario
 
 - Deflector: desarrollo de 215 mm, con paños de 115, 60 y 40 mm; ancho útil igual al de la cámara (464 mm); pestañas de 15 mm por lado; 494 mm de ancho total; pliegues de 50° y 20°; paño vertical a 60 mm del fondo y punto más bajo a 300 mm del piso.
@@ -77,4 +81,4 @@ Antes de publicar cambios del exportador, ejecutar `python scripts/test_export_m
 - Se eliminó la segunda aparición de la misma foto del step-down.
 - Se reemplazaron los títulos genéricos de las imágenes por descripciones y pies de figura. La fotografía del mecanismo se identifica como conjunto; los planos KP08 y KFL08/KL08 se identifican por separado.
 - Los ángulos del deflector se expresan como inclinación principal y pliegues, siguiendo la tabla original, sin atribuir todos los ángulos a planos absolutos respecto de la horizontal.
-- Se retiraron del sitio los renders, modelos y manifiestos de la mecánica anterior. Los recursos gráficos del manual son las fotografías de referencia, las capturas del FCStd congelado, los desarrollos acotados de los DXF, el plano 12-02 del INTI y el plano del mueble.
+- Se retiraron del sitio los renders, modelos y manifiestos de la mecánica anterior. Los recursos gráficos del manual son las fotografías de referencia, las capturas del FCStd congelado, los desarrollos acotados de los DXF, los planos de la v3 y el plano del mueble.

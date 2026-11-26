@@ -54,7 +54,7 @@ Las páginas siguen el orden de fabricación.
 
 -   **[Vista 3D y anexos](vista-3d.md)**
 
-    Vistas del modelo, archivos STEP y DXF, y planos del INTI.
+    Vistas del modelo, archivos STEP y DXF, y planos de la v3.
 
 </div>
 

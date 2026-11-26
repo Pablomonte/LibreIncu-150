@@ -94,9 +94,9 @@ La contraplaca aprieta la resistencia contra el fondo de la budinera. Es una U c
 
 ## Chapa de impacto
 
-![Plano ALT-INC001-12-02 del INTI: desarrollo y plegado de la chapa de impacto del agua](img/manual/chapa-impacto-plano-inti.png){ width=640 }
+![Plano LI150-V3-06-04: desarrollo de la chapa de impacto del agua, con los pliegues](img/planos/v3/LI150-V3-06-04_desarrollo.png){ width=640 }
 
-*Figura 7. Chapa de impacto del agua, plano ALT-INC001-12-02 del INTI.*
+*Figura 7. Chapa de impacto del agua, desarrollo del plano [LI150-V3-06-04](planos/v3/LI150-V3-06-04_chapa-de-impacto-del-agua.pdf).*
 
 1. Cortar chapa de aluminio de **2 mm** según el desarrollo del plano: **435 × 275 mm**, respaldo trapezoidal de 95 mm abajo y 210 mm arriba.
 2. Redondear las esquinas inferiores con radio de 10 mm.
