@@ -31,13 +31,13 @@ Las medidas generales del mueble (exterior, cámara y cajón) están en [Dimensi
 
 | Pieza | Cantidad | Material | Medida de corte (mm) | Ver |
 |---|---|---|---|---|
-| Deflector | 1 | Aluminio 0,5 mm | 494 × 225 | [Deflector](#deflector) |
+| Deflector | 1 | Aluminio 0,5 mm | 494 × 215 | [Deflector](#deflector) |
 | Contraplaca de la resistencia | 1 | Acero 1,5 mm | 240 × 156,7 | [Contraplaca](#contraplaca) |
 | Chapa de impacto del agua | 1 | Aluminio 2 mm | 435 × 275 | [Chapa de impacto](#chapa-de-impacto) |
 | Carro del husillo | 1 | Acero 3,2 mm | 74,6 × 123,5, según el [desarrollo](cad/carro_portatuercas_corredera-Body.dxf) | [Carro](#carro) |
 | Chapa soporte del ventilador | 1 | Chapa 0,5 mm | 494 × 227: 464 de ancho y pestañas de 15 plegadas hacia arriba | — |
 | Soportes de la bandeja nacedora | 2 | Perfil L 20 × 20 × 3,2 | 420 | [Fuente de calor](montaje-mecanico.md#fuente-de-calor) |
-| Perfiles L de la budinera | 2 | Perfil L 20 × 20 × 2 | 464 | [Fuente de calor](montaje-mecanico.md#fuente-de-calor) |
+| Perfiles L de la budinera | 2 | Perfil L 20 × 20 × 2 | 462: 1 de juego contra cada lateral, para sacar la budinera | [Fuente de calor](montaje-mecanico.md#fuente-de-calor) |
 | Muñones de las cunas | 6 | Barra de acero Ø8 | 3 de 22 (lado opuesto) y 3 de 38 (lado del husillo) | [Bandejas](montaje-mecanico.md#bandejas) |
 | Varilla de vínculo | 1 | Planchuela 20 × 3,2 | 260 | 3 agujeros Ø8 |
 
@@ -57,18 +57,18 @@ Las medidas generales del mueble (exterior, cámara y cajón) están en [Dimensi
 | Parámetro del desarrollo | Medida |
 |---|---|
 | Espesor de chapa | 0,5 mm |
-| Largo del desarrollo | 225 mm |
+| Largo del desarrollo | 215 mm |
 | Ancho útil | 464 mm |
 | Pestañas laterales | 15 mm por lado |
 | Ancho total, con pestañas | 494 mm |
-| Paños | 115 + 60 + 50 mm |
+| Paños | 115 + 60 + 40 mm |
 | Líneas de pliegue desde un extremo | 115 y 175 mm |
 | Pliegues | 50° y 20°, en el mismo sentido |
 
-1. Cortar chapa de aluminio de 0,5 mm de **494 × 225 mm**: quedarán **464 mm de ancho útil** y pestañas laterales de **15 mm por lado**. El desarrollo está en [`Deflector_Aire.dxf`](cad/Deflector_Aire.dxf).
-2. Marcar los pliegues a **115 mm** y **175 mm** desde un extremo: forman paños de 115, 60 y 50 mm.
+1. Cortar chapa de aluminio de 0,5 mm de **494 × 215 mm**: quedarán **464 mm de ancho útil** y pestañas laterales de **15 mm por lado**. El desarrollo está en [`Deflector_Aire.dxf`](cad/Deflector_Aire.dxf).
+2. Marcar los pliegues a **115 mm** y **175 mm** desde un extremo: forman paños de 115, 60 y 40 mm.
 3. Cortar en V las pestañas sobre las líneas de pliegue.
-4. Plegar **50°** en la línea de 115 mm y **20°** en la de 175 mm, en el mismo sentido. Con el paño de 115 mm inclinado 20° hacia abajo, el paño de 50 mm queda vertical.
+4. Plegar **50°** en la línea de 115 mm y **20°** en la de 175 mm, en el mismo sentido. Con el paño de 115 mm inclinado 20° hacia abajo, el paño de 40 mm queda vertical.
 5. Plegar las seis pestañas de 15 mm hacia arriba y desbarbar.
 
 ## Contraplaca

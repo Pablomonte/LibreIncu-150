@@ -35,9 +35,9 @@ Vistas y archivos del modelo 3D de la v3 (`LibreIncu_Rediseno_Despiece.FCStd`).
 
 | Archivo | Contenido |
 |---|---|
-| [LibreIncu_Rediseno_Despiece.step](cad/LibreIncu_Rediseno_Despiece.step) | Conjunto completo |
+| [LibreIncu_Rediseno_Despiece.step](cad/LibreIncu_Rediseno_Despiece.step) | Conjunto completo, con el mueble y el contenido del cajón |
 | [bandejas-y-soportes.step](cad/bandejas-y-soportes.step) | Bandejas, cunas, ejes y soportes |
-| [husillo-kp08-acople.step](cad/husillo-kp08-acople.step) | Husillo, KP08 y acople |
+| [husillo-kp08-acople.step](cad/husillo-kp08-acople.step) | Husillo, KP08, acople y eje del motor |
 | [carro-y-finales-de-carrera.step](cad/carro-y-finales-de-carrera.step) | Carro plegado, finales de carrera y reed |
 | [deflector.step](cad/deflector.step) | Deflector |
 | [fuente-de-calor.step](cad/fuente-de-calor.step) | Fuente de calor y chapa de impacto |

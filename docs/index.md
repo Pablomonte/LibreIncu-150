@@ -68,7 +68,7 @@ Medidas en mm. Las posiciones se toman dentro de la cámara: ancho desde un late
 |---|---|
 | Exterior (ancho × profundidad × alto) | 500 × 536 × 1140; la profundidad incluye el fondo y la puerta |
 | Cámara (ancho × profundidad × alto) | 464 × 500 × 974 |
-| Cajón superior (ancho × profundidad × alto) | 464 × 482 × 112; aloja el tablero, el motor y la caja de bomba y electroválvula; se abre levantando la tapa superior |
+| Cajón superior (ancho × profundidad × alto) | 464 × 482 × 112; aloja el tablero, el motor y la caja de bomba y electroválvula; se abre levantando la tapa superior, con dos bisagras atrás |
 | Puerta | 500 × 1010; cubre la cámara, no el frente del cajón |
 | Placas | MDF melamina de 18 mm; lista de corte en [Compra y corte](compra-y-corte.md#mueble) |
 
@@ -91,7 +91,8 @@ Medidas en mm. Las posiciones se toman dentro de la cámara: ancho desde un late
 |---|---|
 | Husillo THSL Ø8 × 400 | 15 del lateral izquierdo y 40 del fondo, desde 10 del techo hacia abajo |
 | Motorreductor SP 8-18 | Vertical en el cajón, en línea con el husillo; brida de chapa de 0,5 atornillada sobre el techo; largo 110 más la brida |
-| Acople 8:8 | Justo debajo del techo |
+| Acople 8:8 | 0,5 sobre el KP08 superior, dentro del agujero Ø28 del techo |
+| Eje del motor | Sale 28 bajo la brida y queda a 0,5 del husillo |
 | Perno del carro (cuna superior) | 40 sobre el eje y 180 hacia el fondo |
 | Reed A (superior) | 210 del fondo y 210 del techo, inclinado 30° |
 | Reed B (inferior) | 210 del fondo y 305 del techo |
@@ -106,11 +107,11 @@ Medidas en mm. Las posiciones se toman dentro de la cámara: ancho desde un late
 |---|---|
 | Paño vertical, desde el fondo | 60 |
 | Punto más bajo, desde el piso | 300 |
-| Borde superior del paño vertical, desde el piso | 446 |
-| Paños | 115, 60 y 50 |
+| Borde superior del paño vertical, desde el piso | 436 |
+| Paños | 115, 60 y 40 |
 | Inclinación del paño principal | 20° hacia abajo |
 | Pliegues | 50° y 20° |
-| Desarrollo | 494 × 225: 464 de ancho útil y pestañas de 15 |
+| Desarrollo | 494 × 215: 464 de ancho útil y pestañas de 15 |
 
 ### Fuente de calor y humedad
 

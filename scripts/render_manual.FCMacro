@@ -50,7 +50,7 @@ COLORS=[  # prefijo del nombre de la pieza: color
     ('fc_perfil_L',(0.18,0.40,0.56)),
     ('fc_soporte_nacedora',(0.11,0.27,0.40)),
     ('fc_chapa_impacto',(0.56,0.71,0.84)),
-    ('camara_',(0.86,0.86,0.86)),
+    ('mueble_',(0.86,0.86,0.86)),
 ]
 
 def color_of(name):
@@ -74,8 +74,8 @@ def leaves(groups, exclude=()):
     return found - set(exclude)
 
 def wall(test):
-    """Pared de la cámara de referencia que cumple test(BoundBox global)."""
-    for o in sorted(leaves(['camara_referencia'])):
+    """Placa del mueble que cumple test(BoundBox global)."""
+    for o in sorted(leaves(['mueble'])):
         obj=doc.getObject(o)
         shape=obj.Shape.copy()
         shape.Placement=obj.getGlobalPlacement().multiply(obj.Placement.inverse()).multiply(shape.Placement)
