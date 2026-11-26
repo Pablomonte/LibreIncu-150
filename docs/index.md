@@ -2,11 +2,21 @@
 icon: material/home-outline
 ---
 
-# Manual de fabricación y montaje - LibreIncu 150 v3
+<div class="portada" markdown>
+<img class="huevo" src="assets/huevo-yema.png" alt="" style="width:88px">
 
-Este manual describe cómo fabricar y montar la incubadora LibreIncu 150 v3, un equipo automatizado para incubar huevos con control de temperatura, humedad y rotación de bandejas.
+<span class="kicker">Manual de fabricación y montaje · v3</span>
+
+# LibreIncu 150
+
+<p class="sub">Incubadora libre de 166 huevos, con control de temperatura, humedad y volteo de bandejas.</p>
 
 [Empezar](antes-de-fabricar.md){ .md-button .md-button--primary } [Descargar PDF](manual_libreincu_150.pdf){ .md-button }
+</div>
+
+<span class="kicker">Qué es este manual</span>
+
+<p class="lead">Cómo fabricar y montar la LibreIncu 150 v3, paso a paso: compra y corte, montaje del mueble y la mecánica, instalación eléctrica y puesta en marcha.</p>
 
 <div class="solo-web visor-3d" markdown>
 <iframe src="animacion/rotacion_bandejas.html?embebido" title="Volteo de bandejas en el modelo 3D de la LibreIncu 150 v3" loading="lazy"></iframe>

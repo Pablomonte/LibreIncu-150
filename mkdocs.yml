@@ -10,18 +10,19 @@ edit_uri: ''
 theme:
   name: material
   language: es
-  icon:
-    logo: material/egg
+  logo: assets/huevo-yema.png
+  favicon: assets/favicon-yema.png
+  font: false  # Fraunces, Inter e IBM Plex Mono alojadas en docs/assets/fuentes
   palette:
     - scheme: default
-      primary: green
-      accent: light green
+      primary: custom
+      accent: custom
       toggle:
         icon: material/weather-night
         name: Modo oscuro
     - scheme: slate
-      primary: green
-      accent: light green
+      primary: custom
+      accent: custom
       toggle:
         icon: material/weather-sunny
         name: Modo claro
@@ -55,6 +56,7 @@ nav:
       - Descargar PDF: manual_libreincu_150.pdf
 
 extra_css:
+  - stylesheets/fuentes.css
   - stylesheets/extra.css
 
 markdown_extensions:
