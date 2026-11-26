@@ -8,7 +8,7 @@ Trabajar siempre sin tensión. El equipo se conecta a la red recién en la [pues
 
 ## Tablero
 
-El tablero eléctrico y de control va en el cajón superior del mueble, arriba del techo de la cámara: 464 × 482 × 112 mm libres. Se accede levantando la tapa superior; la puerta no lo cubre. En el cajón van también el motor de rotación y la caja estanca de la bomba y la electroválvula.
+El tablero eléctrico y de control va en el cajón superior del mueble, arriba del techo de la cámara: 464 × 482 × 112 mm libres. Se accede levantando la tapa superior; la puerta no lo cubre. En el cajón van también el motor de rotación y la caja estanca de la bomba y la electroválvula. Los cables de la cámara suben al cajón por el pase de Ø25 mm del techo y el cable de alimentación entra por un pase de Ø14 mm del fondo. Los cables entran a la caja del tablero por prensacables PG13,5 en su cara trasera.
 
 ![Tablero eléctrico del equipo real con protecciones, fuente, placa y módulos](img/manual/tablero-electrico.jpg){ width=500 }
 

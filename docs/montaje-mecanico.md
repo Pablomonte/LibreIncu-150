@@ -13,17 +13,17 @@ Armar el cuerpo con las piezas de la [lista de corte](compra-y-corte.md#mueble) 
 1. **Laterales.** Unir los dos laterales sobre la tapa inferior, al ras de sus cantos.
 2. **Techo.** Antes de colocarlo, perforar con la plantilla del techo el agujero de Ø28 mm del motor, a 15 mm del canto del lateral del husillo y 40 mm del canto trasero, y los pases al cajón: Ø25 mm para los cables y Ø14 mm para la manguera del aspersor. Colocarlo entre los laterales, con su cara superior a 112 mm del borde superior de los laterales: la cámara queda de 974 mm de alto. Las cotas «desde el techo» de esta página y las plantillas superiores se toman desde la cara inferior de esta pieza.
 3. **Frente del cajón.** Colocarlo entre los laterales, sobre el techo y al ras del frente.
-4. **Fondo.** Atornillarlo por detrás, sobre los cantos de los laterales y de la tapa inferior. Su borde superior queda al ras de los laterales.
+4. **Fondo.** Perforar sus pases, sobre el techo: Ø20 mm del desagote y Ø14 mm del cable de alimentación y de la entrada de agua. Atornillarlo por detrás, sobre los cantos de los laterales, de la tapa inferior y del techo, con tornillos para madera de 4 × 40 mm de cabeza fresada. Su borde superior queda al ras de los laterales.
 5. **Tapa superior.** Apoyarla sobre los laterales, el fondo y el frente del cajón, al ras del frente y de la cara trasera del fondo, y unirla al fondo con dos bisagras ficha de 63 mm, a 80 mm de cada costado. No se encola ni lleva tarugos: se levanta hacia atrás para abrir el cajón.
-6. **Puerta.** Montarla delante de la cámara con dos bisagras ficha de 63 mm y el cierre de tracción. Cubre desde abajo hasta el canto del techo; el frente del cajón, donde va el tablero eléctrico y de control, queda a la vista.
-7. **Terminación.** Colocar el burlete tipo D en el marco de la puerta y las cuatro patas de goma.
+6. **Puerta.** Calzar los perfiles U en sus cuatro cantos y montarla delante de la cámara con dos bisagras ficha de 63 mm y el cierre de tracción. Cubre desde abajo hasta el canto del techo; el frente del cajón, donde va el tablero eléctrico y de control, queda a la vista.
+7. **Terminación.** Calzar los perfiles U en los cantos delanteros de los laterales y de la tapa inferior, colocar el burlete tipo D en el marco de la puerta y atornillar las cuatro patas de goma.
 
 ## Bandejas
 
 Cada cuna lleva soldados dos muñones de barra Ø8, uno en el centro de cada brazo, casi en el borde inferior del ala. Cada muñón termina dentro de su KFL08, sin sobresalir hacia el lateral. Como los muñones no se pueden pasar con los soportes ya fijos, los KFL08 se colocan en la cuna antes de atornillarlos.
 
 1. Colocar un KFL08 en cada muñón de la cuna.
-2. Presentar la cuna y atornillar los dos soportes a los laterales, con el centro del eje a **260 mm del fondo** y a **255, 375 y 495 mm del techo**.
+2. Presentar la cuna y atornillar los dos soportes a los laterales con tornillos para madera de 4 × 20 mm, con el centro del eje a **260 mm del fondo** y a **255, 375 y 495 mm del techo**.
 3. Colocar la varilla de vínculo en los pernos Ø8 de las tres cunas, soldados en el brazo del lado del husillo a 100 mm del eje, hacia el fondo.
 
 !!! note "Plantilla"
@@ -50,7 +50,7 @@ Cada cuna lleva soldados dos muñones de barra Ø8, uno en el centro de cada bra
     - Ajustar la altura inicial, de la mitad del husillo hacia abajo.
 2. **Montar los soportes KP08 y el motor.**
     - El husillo va a **15 mm del lateral izquierdo** y a **40 mm del fondo**, desde **10 mm del techo** hacia abajo.
-    - Anclar el soporte KP08 superior al mueble y ajustar el husillo con los prisioneros del soporte, con una llave Allen de 1,5 mm. Dejar que sobresalga hacia arriba unos 12 mm.
+    - Anclar el soporte KP08 superior al lateral con tornillos para madera de 4 × 16 mm y ajustar el husillo con los prisioneros del soporte, con una llave Allen de 1,5 mm. Dejar que sobresalga hacia arriba unos 12 mm.
     - Colocar y anclar el otro soporte KP08 al mueble.
     - En el banco, apretar el acople de 8 mm al eje del motorreductor SP 8-18, con 8,5 mm de eje libre entre la cara de apoyo del motor y el acople.
     - Bajar el motor con el acople por el agujero de Ø28 mm del techo hasta apoyar la brida, una chapa ovalada de 0,5 mm, sobre el techo. El acople entra en el husillo y queda 0,5 mm sobre el KP08 superior; el extremo del eje del motor queda a 0,5 mm del husillo, sin tocarlo.
@@ -128,4 +128,4 @@ La resistencia va debajo de la budinera, apretada contra su fondo por la contrap
 
 1. **Chapa de impacto.** Colocarla en la punta de la budinera del lado del husillo, con el respaldo hacia esa punta y las alas hacia el centro. Su borde superior queda a 298 mm del piso, debajo del deflector. Fijarla a la budinera con tornillos autoperforantes de 4,2 × 13 mm o con remaches pop.
 2. **Aspersor.** Fijar la ménsula a la carcasa y montar la boquilla de 6 mm, apuntando a la chapa de impacto.
-3. **Bomba y electroválvula.** Conectarlas entre sí y montarlas dentro de una caja estanca en el cajón superior, con un desagote en el punto más bajo para las pérdidas ocasionales, que sale por el pase de Ø20 mm del fondo. Unirlas a la boquilla con manguera de 10 mm, que baja a la cámara por el pase de Ø14 mm del techo, y el acople rápido de 10 a 6 mm.
+3. **Bomba y electroválvula.** Conectarlas entre sí y montarlas dentro de una caja estanca en el cajón superior, con un desagote en el punto más bajo para las pérdidas ocasionales, que sale por el pase de Ø20 mm del fondo. La manguera de entrada de agua entra por el pase de Ø14 mm del fondo hasta la caja. Unirlas a la boquilla con manguera de 10 mm, que baja a la cámara por el pase de Ø14 mm del techo, y el acople rápido de 10 a 6 mm.
