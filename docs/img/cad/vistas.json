@@ -21,7 +21,7 @@
     "excluidos": [],
     "camara": "iso",
     "fuente": "LibreIncu_Rediseno_Despiece.FCStd",
-    "sha256_fuente": "06c0d883fe0da397010c6e3ab6d2695c7624fe6feaf76bd97f5fc480367d75d1"
+    "sha256_fuente": "e0fe8cd26baf64f2f6fa92c50387fc10a56c6d0adf9bdf3635e779dc3540d27d"
   },
   {
     "archivo": "husillo-kp08-acople.png",
@@ -34,7 +34,7 @@
     "excluidos": [],
     "camara": "iso",
     "fuente": "LibreIncu_Rediseno_Despiece.FCStd",
-    "sha256_fuente": "06c0d883fe0da397010c6e3ab6d2695c7624fe6feaf76bd97f5fc480367d75d1"
+    "sha256_fuente": "e0fe8cd26baf64f2f6fa92c50387fc10a56c6d0adf9bdf3635e779dc3540d27d"
   },
   {
     "archivo": "corte-lateral.png",
@@ -54,15 +54,15 @@
       "bandeja_3",
       "cuna_brazo_bandeja_3",
       "soporte_KL08_3_derecha",
-      "camara_referencia_pieza_001",
-      "camara_referencia_pieza_004"
+      "mueble_pieza_002",
+      "mueble_pieza_006"
     ],
     "excluidos": [
       "fc_agua_referencia"
     ],
     "camara": "side",
     "fuente": "LibreIncu_Rediseno_Despiece.FCStd",
-    "sha256_fuente": "06c0d883fe0da397010c6e3ab6d2695c7624fe6feaf76bd97f5fc480367d75d1"
+    "sha256_fuente": "e0fe8cd26baf64f2f6fa92c50387fc10a56c6d0adf9bdf3635e779dc3540d27d"
   },
   {
     "archivo": "fuente-de-calor.png",
@@ -74,7 +74,7 @@
     ],
     "camara": "iso",
     "fuente": "LibreIncu_Rediseno_Despiece.FCStd",
-    "sha256_fuente": "06c0d883fe0da397010c6e3ab6d2695c7624fe6feaf76bd97f5fc480367d75d1"
+    "sha256_fuente": "e0fe8cd26baf64f2f6fa92c50387fc10a56c6d0adf9bdf3635e779dc3540d27d"
   },
   {
     "archivo": "fuente-de-calor-inferior.png",
@@ -86,7 +86,7 @@
     ],
     "camara": "iso-below",
     "fuente": "LibreIncu_Rediseno_Despiece.FCStd",
-    "sha256_fuente": "06c0d883fe0da397010c6e3ab6d2695c7624fe6feaf76bd97f5fc480367d75d1"
+    "sha256_fuente": "e0fe8cd26baf64f2f6fa92c50387fc10a56c6d0adf9bdf3635e779dc3540d27d"
   },
   {
     "archivo": "carro-y-finales-de-carrera.png",
@@ -101,6 +101,6 @@
     "excluidos": [],
     "camara": "iso",
     "fuente": "LibreIncu_Rediseno_Despiece.FCStd",
-    "sha256_fuente": "06c0d883fe0da397010c6e3ab6d2695c7624fe6feaf76bd97f5fc480367d75d1"
+    "sha256_fuente": "e0fe8cd26baf64f2f6fa92c50387fc10a56c6d0adf9bdf3635e779dc3540d27d"
   }
 ]
