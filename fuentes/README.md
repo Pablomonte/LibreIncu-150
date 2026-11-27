@@ -63,7 +63,7 @@ Antes de publicar cambios del exportador, ejecutar `python scripts/test_export_m
 
 ## Planos
 
-`docs/planos/v3/` tiene los planos de fabricación de la v3 (LI150-V3), PDF y DXF, copiados sin cambios de `Rediseno/planos/`. Los escriben los generadores de `Rediseno/planos/fuentes/` (`todos.py`) con las cotas de `LibreIncu_Rediseno_Despiece.py`, `fuente_calor.py` y `plantillas_perforacion.py`; la lista, el código y las decisiones están en `Rediseno/PLANOS_V3.md`. `docs/img/planos/v3/*.png` son sus miniaturas: la primera página de cada PDF, pasada a PNG de 420 px de ancho con `pdftoppm -scale-to 420`, sin retoques. `LI150-V3-06-04_desarrollo.png` (Figura 7) es el desarrollo de ese plano, recortado de la página pasada a 200 ppp.
+`docs/planos/v3/` tiene los planos de fabricación de la v3 (LI150-V3), PDF y DXF, copiados sin cambios de `Rediseno/planos/`. Los escriben los generadores de `Rediseno/planos/fuentes/` (`todos.py`) con las cotas de `LibreIncu_Rediseno_Despiece.py`, `fuente_calor.py` y `plantillas_perforacion.py`; la lista, el código y las decisiones están en `Rediseno/PLANOS_V3.md`. `docs/planos/v3/corte/` tiene los DXF de corte de cada pieza, que escribe `Rediseno/planos/fuentes/dxf_corte.py`, copiados sin cambios de `Rediseno/planos/corte/`. `docs/img/planos/v3/*.png` son las miniaturas de los planos: la primera página de cada PDF, pasada a PNG de 420 px de ancho con `pdftoppm -scale-to 420`, sin retoques. `LI150-V3-06-04_desarrollo.png` (Figura 7) es el desarrollo de ese plano, recortado de la página pasada a 200 ppp.
 
 ## Aclaraciones confirmadas por el usuario
 

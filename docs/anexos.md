@@ -91,6 +91,7 @@ Miniaturas de los planos; cada una abre el PDF.
 | [contraplaca_desarrollo.dxf](cad/contraplaca_desarrollo.dxf) | Desarrollo de la contraplaca |
 | [carro_portatuercas_corredera-Body.dxf](cad/carro_portatuercas_corredera-Body.dxf) | Desarrollo del carro |
 | [chapa_ranurada_bandeja.dxf](cad/chapa_ranurada_bandeja.dxf) | Chapa ranurada de la bandeja |
+| [DXF de corte](https://github.com/Pablomonte/LibreIncu-150/tree/LibreIncu-150/docs/planos/v3/corte) | Cada pieza de los planos v3 a 1:1, para CNC, láser o plegadora: una capa por operación (contorno, plegados, agujeros por diámetro y profundidad, cantos) y las cotas en su propia capa |
 | [LibreIncu_Rediseno_Despiece.FCStd](https://github.com/Pablomonte/LibreIncu-150/blob/LibreIncu-150/fuentes/LibreIncu_Rediseno_Despiece.FCStd) | Modelo 3D de referencia de la v3 (FreeCAD) |
 
 Los STEP del modelo están en [Vista 3D](vista-3d.md#descargas).
